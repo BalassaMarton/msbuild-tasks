@@ -3,3 +3,7 @@ packages/
 bin/
 artifacts/
 .dotnet/
+/.vs/msbuild-tasks/v15
+/Example/.vs/Example/v15
+/Source/GreetingTasks/.vs/GreetingTasks/v15
+/msbuild-tasks.sln

@@ -1,4 +1,5 @@
 using Microsoft.Build.Framework;
+using Newtonsoft.Json.Linq;
 using MSBuildTask = Microsoft.Build.Utilities.Task;
 
 namespace MSBuildTasks
@@ -8,6 +9,7 @@ namespace MSBuildTasks
         public override bool Execute()
         {
             Log.LogMessage(MessageImportance.High, "Aloha");
+            var json = new JObject();
             return true;
         }
     }
