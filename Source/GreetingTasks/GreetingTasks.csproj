@@ -9,7 +9,7 @@
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <!-- Change the default location where NuGet will put the build output -->
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
-    <!--<CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>-->
+    <CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
     <!-- set the version automatically -->
     <VersionPrefix>0.1.0</VersionPrefix>
     <VersionSuffix>build$([System.DateTime]::Now.ToString('yyyyMMdd-HHmm'))</VersionSuffix>
@@ -26,16 +26,17 @@
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Update="Microsoft.Build.Framework" Version="15.3.409" />
     <PackageReference Update="Microsoft.Build.Utilities.Core" Version="15.3.409" />
-    <PackageReference Update="Newtonsoft.Json" Version="10.0.3" />
     <!-- Marks all packages as 'local only' so they don't end up in the nuspec. -->
     <PackageReference Update="@(PackageReference)" PrivateAssets="All" />
+    <PackageReference Update="Newtonsoft.Json" Version="10.0.3" />
+    
   </ItemGroup>
 
-  <!--<Target Name="PackTaskDependencies" BeforeTargets="GenerateNuspec">
-    --><!--
+  <Target Name="PackTaskDependencies" BeforeTargets="GenerateNuspec">
+    <!--
     The include needs to happen after output has been copied to build output folder
     but before NuGet generates a nuspec.
-    --><!--
+    -->
     <ItemGroup>
       <_PackageFiles Include="bin\$(Configuration)\**\*.dll">
         <PackagePath>tasks\%(RecursiveDir)</PackagePath>
@@ -43,7 +44,7 @@
         <BuildAction>Content</BuildAction>
       </_PackageFiles>
     </ItemGroup>
-  </Target>-->
+  </Target>
 
 
 </Project>

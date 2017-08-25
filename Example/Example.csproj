@@ -4,10 +4,6 @@
     <TargetFramework>netcoreapp1.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="GreetingTasks" Version="0.1.0-*" PrivateAssets="All" />
-  </ItemGroup>
-
   <Target Name="Greet" BeforeTargets="PrepareForBuild">
     <SayHello />
   </Target>
@@ -15,5 +11,9 @@
   <Target Name="Thank" AfterTargets="Build">
     <SayThankYou />
   </Target>
+
+  <ItemGroup>
+    <PackageReference Include="GreetingTasks" Version="0.1.0-build20170825-1057" PrivateAssets="All" />
+  </ItemGroup>
 
 </Project>
